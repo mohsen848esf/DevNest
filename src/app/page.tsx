@@ -1,65 +1,60 @@
+'use client'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import { Header } from '@/components/header/header'
+import { Tab } from '@/components/tab/tab'
+import { BookCard } from '@/components/bookCard/bookCard'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-       
-          <code className={styles.code}>DevNest community</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={'bg-[#1c1f25] h-[1200px]'}>
+      <Header/>
+      <div className='container mx-auto'>
+        <section>
+
+        <div className='mt-36'>
+          <h1>Click.</h1>
+          <h1>Code.</h1>
+          <h1 className='text-[#8571f9]'>Done.</h1>
         </div>
-      </div>
+        <p className='w-3/6 mt-5 text-[18px] font-normal leading-loose text-[#b6b7b9] text-ellipsis	align-baseline'>Stay in the flow with instant dev experiences. No more hours stashing/pulling/installing locally — just click, and start coding.</p>
+        </section>
+        <section className='mt-36 w-full  '>
+          <div className='border flex flex-col items-center  '>
+            <h3 className='mb-12 text-[#b6b7b9] text-[36px]'>Boot a fresh environment in <strong className='text-white'>milliseconds.</strong></h3>
+            <div className=' w-5/6 mb-6'>
 
-      <div className={styles.center}>
-        <Image
-       
-          src="/devNestLogo.png"
-          alt="Next.js Logo"
-          width={150}
-          height={50}
-          priority
-        />
-     
-      </div>
+            <Tab/>
+            </div>
+            <div className=' w-5/6  mx-auto grid grid-cols-4 gap-4'>
+              <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' />
+            </div>
+          </div>
+        </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* blogs and news */}
+        <section className='mt-36 w-full  '>
+          <div className='border flex flex-col items-center  '>
+            <h3 className='mb-12 text-[#b6b7b9] text-[36px]'>Boot a fresh environment in <strong className='text-white'>milliseconds.</strong></h3>
+            <div className=' w-5/6 mb-6'>
 
-   
-
-     
+            {/* <Tab/> */}
+            </div>
+            <div className=' w-5/6  mx-auto grid grid-cols-4 gap-4'>
+              {/* <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' />
+              <BookCard href='/' src='/site_logo.png' label='React' /> */}
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   )
